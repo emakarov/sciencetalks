@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<style>
+p img{
+ width:100%;
+ margin-left:0%;
+ margin-bottom:20px;
+ margin-top:20px;
+}
+</style>
+{% endblock %}
+{% block wrapper %}
+  <div class="container" style="background:#fff;padding-top:20px;padding-bottom:40px">
+    <div class="row">
+      <div class="col-md-12">
+        <div style="margin-bottom:40px">
+          <center>
+          <h2 style="color:#27ae60">{{ article.title }}</h2>
+          <div style="font-size:16px;color:#2c3e50">
+            {{ article.small_title }}
+          </div>
+          </center>
+        </div>
+        <img src="{{STATIC_URL}}images/klinshov.jpg" class="img-responsive" alt="Responsive image">
+      </div>
+    </div>
+    <div class="row" style="margin-top:20px;font-size:16px;color:#2c3e50">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+      <div style="padding:10px;text-align:justify">
+      {{ article.text|safe }}
+      <br>
+      <br>
+      <br>
+      Обсуждение статей проходит на 
+      <a href="https://www.facebook.com/sciencetalks.ru">
+        странице Sciencetalks.ru в Facebook
+      </a>
+      <br>
+      <br>
+      Пишите нам также, если вы хотите стать соавтором проекта или предложить тему для следующей беседы.
+      </div>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+   <div class="container" style="background:#ecf0f1;padding:20px 20px 40px;">
+    <div class="row" style="font-size:16px">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+      <br>
+      <br>
+      Идея проекта:&nbsp;
+      <a href="https://www.facebook.com/makarov">Евгений Макаров</a>
+      <br>
+      Cъемочная группа:&nbsp;
+      <a href="https://www.facebook.com/mishkins.denisov">Михаил Денисов</a> и 
+      <a href="https://www.facebook.com/marina.denisova.31">Марина Денисова</a>
+      <br>
+      <br>
+      <br>
+      Авторы проекта выражают благодарность 
+      <a href="http://www.ncca.ru/main?filial=3">ГСЦИ Арсенал</a> за возможность проведения интервью.
+      <br>
+      <br>
+      </div>
+    </div>
+   </div>
+{% endblock %}

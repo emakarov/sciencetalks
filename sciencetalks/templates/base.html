@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {% block head %}
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  {% block title %}
+  <title>{% block subtitle %}{% endblock %}ScienceTalks. Разговоры о науке.</title>
+  {% endblock %}
+  <meta name="description" content="ScienceTalks, science, Разговоры о науке, Физика, Математика, Computer science,">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Le styles -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{STATIC_URL}}css/metrize-icon-font.css">
+  <style>
+  .social-icons{
+    margin-top: 5px;
+   }
+   .social-icons a{
+    color: #fff;
+    font-size: 31px;
+    padding: 0 8px;
+    margin-bottom: 18px;
+   }
+   
+   .social-icons:hover a{
+    color: #fff;
+   }
+   
+   .social-icons a:hover{
+    color: #fff;
+    text-decoration:none;
+    }
+    
+    ul.unstyled, ol.unstyled {
+     margin-left: 0;
+     list-style: none;
+    }    
+    ul, ol {
+    	margin-top: 0;
+    	margin-bottom: 0px;
+    }    
+    .whitea{
+    color:#fff;
+    text-decoration:underline;
+    } 
+    
+    .whitea:hover{
+      color:#fff;
+    text-decoration:underline;
+    }
+    </style>
+  
+  {% endblock %}
+  {% block extrahead %}
+  {% endblock %}
+  </head>
+  <body style="background:#f8f8f8">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=483955561697257";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  
+  {% block menu %}
+  {% endblock %}
+  {% block navbar %}
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <nav class="navbar" style="margin-bottom:0;border-radius:0;border-top:0;border-left:0;border-right:0;background:#34495e">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+       <img src="{{STATIC_URL}}images/sciencetalks_white.png" style="height:20px;" class="img-responsive" alt="Responsive image">
+      </a>
+    </div><!-- /.navbar-collapse -->
+
+    <ul class="unstyled inline social-icons pull-right">
+      <li><a target="_blank" href="http://facebook.com/sciencetalks.ru"><span class="icon-social-facebook"></span></a></li>
+    </ul>
+
+
+  </div>
+  </nav>
+  {% endblock %}
+  {% block wrapper %}
+  {% endblock %}
+  {% block footer %}
+   <div class="container" style="background:#16a085;padding:20px 20px 40px;color:#fff">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+   </div>
+  {% endblock %}
+  {% block bottom_js %}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-wip/js/bootstrap.min.js"></script>    
+  {% endblock %}
+  {% block extra_bottom_js %}
+  {% endblock %}
+  </body>
+</html>
