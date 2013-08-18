@@ -1,0 +1,39 @@
+#!/bin/sh
+# Start/stop sciencetalks
+
+PIDFILE=/home/makarov/runfiles/sciencetalks.pid
+
+
+NAME=sciencetalks
+RUN_AS=`id -u makarov`
+CMD=/home/makarov/sciencetalks/start.sh
+OPTS=
+
+do_start() {
+    start-stop-daemon --start --background --user $RUN_AS --pidfile $PIDFILE --chuid $RUN_AS --startas $CMD -- $OPTS
+}
+
+do_stop() {
+    start-stop-daemon --stop --user $RUN_AS
+}
+
+case "$1" in
+start)
+    echo -n "Starting $NAME \n"
+    do_start
+        ;;
+stop)
+    echo -n "Stopping $NAME \n"
+    do_stop
+    ;;
+restart)
+    echo -n "Restarting $NAME \n"
+    do_stop
+    do_start
+    ;;
+*)
+    echo -n "Usage: /etc/init.d/sciencetalks {start|stop|restart} \n"
+    exit 2
+    ;;
+esac
+exit 0
